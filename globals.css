@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts via next/font in layout.js */
+
+:root {
+  --bg: #0B0D12;
+  --primary: #14F195;
+  --accent: #7C3AED;
+}
+
+html, body {
+  height: 100%;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,0.25), transparent 60%),
+              radial-gradient(900px 500px at 90% -10%, rgba(20,241,149,0.18), transparent 50%),
+              #0B0D12;
+  color: #E5E7EB;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #14F195, #7C3AED, #14F195);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md;
+}
+
+.card-hover {
+  @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-glowAccent;
+}
+
+.section {
+  @apply mx-auto max-w-6xl px-6;
+}
+
+/* Animated gradient border */
+.animated-border {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1px;
+  background: conic-gradient(from 0deg, #14F195, #7C3AED, #14F195);
+  animation: spin 8s linear infinite;
+}
+
+.animated-border > .inner {
+  border-radius: 0.95rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes spin {
+  to { transform: rotate(1turn); }
+}
